@@ -152,6 +152,11 @@ body, html {
         height: 8.33em;
         width: 10em;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-around;
+
         margin-top:0;
         margin-bottom: auto;
         
@@ -159,6 +164,23 @@ body, html {
         
         background-color: rgb(255, 72, 0);
     }
+    .buttonsRight {
+        /* background-color: blue; */
+        height: 100%;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 33%;
+        justify-items: center;
+        align-items: center;
+
+        margin-top: 2em;
+        margin-bottom: -2em;
+        
+    }
+
+
 
 
     .rightCenter {
