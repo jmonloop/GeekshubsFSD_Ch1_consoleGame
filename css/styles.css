@@ -116,6 +116,7 @@ body, html {
         align-items: center;
         justify-content: center;
 
+        position:relative;
     }
 
     .frame {
@@ -125,17 +126,24 @@ body, html {
 
     .gapLeft {
         background-color: white;
-        margin-top: 0;
-        margin-bottom: auto;
-        margin-right: auto;
-        margin-left: 0;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+
+        height: 1em;
+        width: 1em;
+
+        border-radius: 0 0 50% 0;
     }
 
     .gapRight {
         background-color: white;
-        background-color: white;
-        margin-top: 0;
-        margin-bottom: auto;
-        margin-right: 0;
-        margin-left: auto;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+
+        height: 1em;
+        width: 1em;
+
+        border-radius: 0 0 0 50%;
     }
