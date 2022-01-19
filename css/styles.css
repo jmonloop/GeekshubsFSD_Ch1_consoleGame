@@ -86,21 +86,46 @@ body, html {
         }
 
             .buttonsLeft {
-                background-color: blue;
+                /* background-color: blue; */
                 height: 100%;
                 width: 100%;
 
                 display: grid;
                 grid-template-columns: 33% 33% 33%;
                 grid-template-rows: 33%;
+                justify-items: center;
+                align-items: center;
 
                 margin-top: 2em;
                 margin-bottom: -2em;
                 
             }
                 .grid {
-                    border-style: solid;
+                    /* border-style: solid; */
                 }
+                    .button {
+                        background-color: black;
+                        height: 70%;
+                        width: 70%;
+
+                        border-radius: 100%;
+
+                    }
+                    .topButton {
+                        margin-bottom: -2em;
+                    }
+                    .rightButton {
+                        margin-left: -2em;
+                    }
+                    .bottomButton {
+                        margin-top: -2em;
+                    }
+                    .leftButton {
+                        margin-right: -2em;
+                    }
+
+
+
 
         .leftBottom {
             height: 8.33em;
