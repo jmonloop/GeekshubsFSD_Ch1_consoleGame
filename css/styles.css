@@ -37,11 +37,39 @@ body, html {
 
             margin-top:0;
             margin-bottom: auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-around;
             
             border-radius: 50% 0 0 0;
             
             background-color: rgb(0, 183, 255);
         }
+            .joystickLeft {
+                background-color: black;
+                height: 5em;
+                width: 5em;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content:space-around;
+
+                border-radius: 100%;
+
+                margin-top: 3em;
+            }
+
+                .joyLeftCircle {
+                    background-color: grey;
+                    height: 3.5em;
+                    width: 3.5em;
+
+                    border-radius: 100%;
+                }
+
         .leftCenter {
             height: 8.33em;
             width: 10em;
@@ -83,15 +111,46 @@ body, html {
         
         background-color: rgb(255, 72, 0);
     }
+
+
     .rightCenter {
         height: 8.33em;
         width: 10em;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-around;
 
         margin-top:auto;
         margin-bottom: auto;
 
         background-color: rgb(255, 72, 0);
     }
+
+        .joystickRight {
+            background-color: black;
+            height: 5em;
+            width: 5em;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-around;
+
+            border-radius: 100%;
+
+            margin-top: 2em;
+        }
+
+            .joyRightCircle {
+                background-color: grey;
+                height: 3.5em;
+                width: 3.5em;
+
+                border-radius: 100%;
+            }
+
     .rightBottom {
         height: 8.33em;
         width: 10em;
