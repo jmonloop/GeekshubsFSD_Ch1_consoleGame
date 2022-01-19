@@ -23,6 +23,7 @@ body, html {
     .left {
         height: 25em;
         width: 10em;
+        z-index: 100;
         /* background-color: rgb(0, 183, 255); */
 
         margin-right:auto;
@@ -45,6 +46,7 @@ body, html {
             justify-content:space-around;
             
             border-radius: 50% 0 0 0;
+
             
             background-color: rgb(0, 183, 255);
         }
@@ -136,6 +138,7 @@ body, html {
             margin-bottom: 0;
 
             border-radius:  0 0 0 50%;
+            
 
             background-color: rgb(0, 183, 255);
         }
@@ -144,6 +147,7 @@ body, html {
     .right {
         height: 25em;
         width: 10em;
+        z-index: 100;
         /* background-color: rgb(255, 72, 0); */
 
         margin-left:auto;
@@ -237,6 +241,32 @@ body, html {
         border-radius:  0 0 50% 0;
 
         background-color: rgb(255, 72, 0);
+    }
+
+    .leftTrigger {
+        background-color: rgb(49, 54, 49);
+        height: 8.33em;
+        width: 10em;
+        position: absolute;
+        left: 0em;
+        top: -0.5em;
+        /* top: 30em; */
+        z-index: 1;
+
+        border-radius:  45% 20% 0 50%;
+    }
+
+    .rightTrigger {
+        background-color: rgb(49, 54, 49);
+        height: 8.33em;
+        width: 10em;
+        position: absolute;
+        left: 50em;
+        top: -0.5em;
+        /* top: 30em; */
+        z-index: 1;
+
+        border-radius:  20% 45% 50% 0%;
     }
 
     .onOffswitch {
