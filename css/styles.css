@@ -1,0 +1,105 @@
+body, html {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.main {
+    height: 25em;
+    width: 60em;
+
+    display: flex;
+    /* flex-direction: column; */
+
+    background-color: rgb(153, 51, 51);
+}   
+    .left {
+        height: 25em;
+        width: 10em;
+        /* background-color: rgb(0, 183, 255); */
+
+        margin-right:auto;
+        margin-left:0;
+        align-items: center;
+
+        /* display: flex; */
+        flex-direction: row;
+    }
+        .leftTop {
+            height: 8.33em;
+            width: 10em;
+
+            margin-top:0;
+            margin-bottom: auto;
+            
+            border-radius: 50% 0 0 0;
+            
+            background-color: rgb(0, 183, 255);
+        }
+        .leftCenter {
+            height: 8.33em;
+            width: 10em;
+
+            margin-top:auto;
+            margin-bottom: auto;
+
+            background-color: rgb(0, 183, 255);
+        }
+        .leftBottom {
+            height: 8.33em;
+            width: 10em;
+
+            margin-top:auto;
+            margin-bottom: 0;
+
+            border-radius:  0 0 0 50%;
+
+            background-color: rgb(0, 183, 255);
+        }
+
+
+    .right {
+        height: 25em;
+        width: 10em;
+        /* background-color: rgb(255, 72, 0); */
+
+        margin-left:auto;
+        margin-right:0;
+    }
+    .rightTop {
+        height: 8.33em;
+        width: 10em;
+
+        margin-top:0;
+        margin-bottom: auto;
+        
+        border-radius: 0 50% 0 0;
+        
+        background-color: rgb(255, 72, 0);
+    }
+    .rightCenter {
+        height: 8.33em;
+        width: 10em;
+
+        margin-top:auto;
+        margin-bottom: auto;
+
+        background-color: rgb(255, 72, 0);
+    }
+    .rightBottom {
+        height: 8.33em;
+        width: 10em;
+
+        margin-top:auto;
+        margin-bottom: 0;
+
+        border-radius:  0 0 50% 0;
+
+        background-color: rgb(255, 72, 0);
+    }
