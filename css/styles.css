@@ -17,7 +17,7 @@ body, html {
     display: flex;
     /* flex-direction: column; */
 
-    background-color: rgb(153, 51, 51);
+    /* background-color: rgb(153, 51, 51); */
 }   
     .left {
         height: 25em;
@@ -102,4 +102,40 @@ body, html {
         border-radius:  0 0 50% 0;
 
         background-color: rgb(255, 72, 0);
+    }
+
+
+    .center {
+        background-color: pink;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .frame {
+        background-color: gray;
+        height: 95%;
+    }
+
+    .gapLeft {
+        background-color: white;
+        margin-top: 0;
+        margin-bottom: auto;
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .gapRight {
+        background-color: white;
+        background-color: white;
+        margin-top: 0;
+        margin-bottom: auto;
+        margin-right: 0;
+        margin-left: auto;
     }
