@@ -42,9 +42,18 @@ body, html {
         50% {transform: translateY(-10em);}
         100% {transform:  translateX(-10em);}
     }
+    @keyframes moveRight {
+        0% {transform: translateY(0em) translateX(0);}
+        50% {transform: translateY(+10em);}
+        100% {transform:  translateX(+10em);}
+    }
 
-    .left:active {
+    .leftMove {
         animation-name: moveLeft;
+        animation-duration: 2s;
+    }
+    .rightMove {
+        animation-name: moveRight;
         animation-duration: 2s;
     }
 
