@@ -382,10 +382,14 @@ body, html {
         0% {transform: translateX(0);}
         100% {transform:  translateX(+2em);}
     }
+    @keyframes switchOff {
+        0% {transform: translateX(0);}
+        100% {transform:  translateX(-2em);}
+    }
 
     .switchOn {
-        animation-name: switchOn;
-        animation-duration: 1s;
+        animation-name: switchOff;
+        animation-duration: 0s;
     }
 
 

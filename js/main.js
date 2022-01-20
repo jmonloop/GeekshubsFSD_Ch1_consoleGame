@@ -1,9 +1,17 @@
+let leftMovedOut = false;
 function moveLeft() {
-    document.getElementById('_left').classList.toggle('leftMove');
+    if (leftMovedOut === false) {
+        document.getElementById('_left').classList.toggle('leftMove');
+        leftMovedOut = true;
+    }  
 }
 
+let rightMovedOut = false;
 function moveRight() {
-    document.getElementById('_right').classList.toggle('rightMove');
+    if (rightMovedOut === false) {
+        document.getElementById('_right').classList.toggle('rightMove');
+        rightMovedOut = true;
+    }  
 }
 
 function moveCenter() {
@@ -17,5 +25,8 @@ function switchOnOff() {
         document.getElementById('_onOffswitch').classList.toggle('switchOn');
         switchedOn = true;
     }
-    
+    if(switchedOn === true) {
+        document.getElementById('_onOffswitch').classList.toggle('switchOff');
+        switchedOn = false;
+    }
 }
