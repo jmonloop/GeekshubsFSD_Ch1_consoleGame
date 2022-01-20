@@ -37,6 +37,19 @@ body, html {
         /* display: flex; */
         flex-direction: row;
     }
+    @keyframes moveLeft {
+        0% {transform: translateY(0em) translateX(0);}
+        50% {transform: translateY(-10em);}
+        100% {transform:  translateX(-10em);}
+    }
+
+    .left:active {
+        animation-name: moveLeft;
+        animation-duration: 2s;
+    }
+
+
+
         .leftTop {
             background: #00b7ff;
             background: linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
@@ -315,6 +328,7 @@ body, html {
     }
 
     .leftTrigger {
+        display: none;
         background-color: rgb(49, 54, 49);
         height: 8.33em;
         width: 10em;
@@ -328,6 +342,7 @@ body, html {
     }
 
     .rightTrigger {
+        display: none;
         background-color: rgb(49, 54, 49);
         height: 8.33em;
         width: 10em;
