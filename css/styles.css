@@ -77,9 +77,12 @@ body, html {
             justify-content:space-around;
             
             border-radius: 50% 0 0 0;
-
+        }
+        #mydiv {
+            position: absolute;
+           
             
-
+            
         }
             .joystickLeft {
                 background: #909090;
