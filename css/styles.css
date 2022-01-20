@@ -10,6 +10,10 @@ body, html {
     justify-content:space-around;
 }
 
+.img {
+    height: 100em;
+}
+
 .main {
     height: 25em;
     width: 60em;
@@ -51,7 +55,11 @@ body, html {
             background-color: rgb(0, 183, 255);
         }
             .joystickLeft {
-                background-color: black;
+                background: #909090;
+                background: linear-gradient(90deg,#909090 0%, #000000 80%);
+                background: -webkit-linear-gradient(90deg,#909090 0%, #000000 80%);
+                background: -moz-linear-gradient(90deg,#909090 0%, #000000 80%);
+                
                 height: 5em;
                 width: 5em;
 
@@ -66,7 +74,10 @@ body, html {
             }
 
                 .joyLeftCircle {
-                    background-color: grey;
+                    background: #909090;
+                    background: linear-gradient(268deg,#909090 0%, #000000 80%);
+                    background: -webkit-linear-gradient(268deg,#909090 0%, #000000 80%);
+                    background: -moz-linear-gradient(268deg,#909090 0%, #000000 80%);
                     height: 3.5em;
                     width: 3.5em;
 
