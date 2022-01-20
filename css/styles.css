@@ -36,6 +36,7 @@ body, html {
 
         /* display: flex; */
         flex-direction: row;
+        animation-fill-mode: forwards;
     }
     @keyframes moveLeft {
         0% {transform: translateY(0em) translateX(0);}
@@ -229,6 +230,8 @@ body, html {
 
         margin-left:auto;
         margin-right:0;
+
+        animation-fill-mode: forwards;
     }
     .rightTop {
         background: #c0552b;
@@ -373,7 +376,19 @@ body, html {
         top: -0.5em;
 
         border-radius: 70% 70% 0 0;
+        animation-fill-mode: forwards;
     }
+    @keyframes switchOn {
+        0% {transform: translateX(0);}
+        100% {transform:  translateX(+2em);}
+    }
+
+    .switchOn {
+        animation-name: switchOn;
+        animation-duration: 1s;
+    }
+
+
 
     .center {
         background-color: rgba(95, 82, 82, 0.932);
