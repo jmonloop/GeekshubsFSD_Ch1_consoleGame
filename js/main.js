@@ -51,11 +51,8 @@ function dragElement(elmnt) {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
   }
-  let initialX = 0;
-  let diffPerX = 0;
-  let diffX = 0;
+
   function dragMouseDown(e) {
-     
         e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
@@ -65,28 +62,16 @@ function dragElement(elmnt) {
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
-    
-    
-    
   }
-  let dummy = false;
-  let toggle = false;
-  //pasar diffPer a número sin signo. Luego hacer que vuelva a init al dejar de clicar
+
+  // Luego hacer que vuelva a init al dejar de clicar
   function elementDrag(e) {
-    
-    if (toggle === false) {diffPerX = 100
-    toggle = true;};
-    
-    // console.log(diffPerX);
-    // console.log(e.clientX);
-    //let finalX = elmnt.style.left;
-    console.log(elmnt.offsetLeft, "manolo");
-   if ((elmnt.offsetLeft>30) && (elmnt.offsetLeft<50)){
+    console.log(elmnt.offsetTop, "manolo");
+
+   
       // if (dummy === false){
       e = e || window.event;
       e.preventDefault();
-
-
 
       // calculate the new cursor position:
       endX = (inX - e.clientX);  
@@ -100,27 +85,33 @@ function dragElement(elmnt) {
         diffPerX *= -1
       }
       
-      // function release() {
-      //   alert("ok");
-      // }
-
-      // document.getElementById("mydiv").addEventListener("mouseup", release);
-
-
-
       // set the element's new position:
-
       elmnt.style.top = (elmnt.offsetTop - endY) + "px";
       elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
+      // Limitates dragging when element arrives final position
+      if(elmnt.offsetLeft <= 30)
+      {
+        elmnt.style.left = 30 + "px";
+      }
 
-      
-    }  
+      if(elmnt.offsetLeft >= 50)
+      {
+        elmnt.style.left = 50 + "px";
+      }
+
+      if(elmnt.offsetTop <= 17) {
+        elmnt.style.top = 17 + "px";
+      }
+      if(elmnt.offsetTop >= 37) {
+        elmnt.style.top = 37 + "px";
+      }
+
+
   }
 
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
-
     document.onmousemove = null;
   }
 }
