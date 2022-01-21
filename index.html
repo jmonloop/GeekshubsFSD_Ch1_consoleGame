@@ -20,8 +20,8 @@
         </div>
         <div class="left" id="_left" onclick="moveLeft()">
             <div class="leftTop">
-                <div id="mydiv">
-                    <div class="joystickLeft">
+                <div id="_joyLeft">
+                    <div class="joystickLeft" onclick="dragLeft()">
                         <div class="joyLeftCircle"></div>
                     </div>
                 </div>
@@ -90,8 +90,10 @@
                 
             </div>
             <div class="rightBottom">
-                <div class="joystickRight">
-                    <div class="joyRightCircle"></div>
+                <div id="_joyRight">
+                    <div class="joystickRight" onclick="dragRight()">
+                        <div class="joyRightCircle"></div>
+                    </div>
                 </div>
             </div>
         </div>

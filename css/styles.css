@@ -108,12 +108,15 @@ body, html {
             
             border-radius: 50% 0 0 0;
         }
-        #mydiv {
-            position: absolute;
-           
-            
-            
+        #_joyLeft {
+            position: absolute;  
         }
+        #_joyRight {
+            position: absolute;  
+        }
+
+
+
             .joystickLeft {
                 background: #909090;
                 background: linear-gradient(90deg,#909090 0%, #000000 80%);
