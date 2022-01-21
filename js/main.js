@@ -81,7 +81,7 @@ function dragLeft() {
       elmnt.style.top = (elmnt.offsetTop - endY) + "px";
       elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
 
-      // Limitates dragging when element arrives final position adding +-10 to zeroing position
+      // Limitates dragging when element arrives final position adding +-10 to zero position
       //left joystick zero: left40 top27
       if(elmnt.offsetLeft <= 30) {
         elmnt.style.left = 30 + "px";
@@ -150,6 +150,7 @@ function dragRight() {
       
         e = e || window.event;
         e.preventDefault();
+        document.onmouseup = zeroingElement;
 
         // calculate the new cursor position:
         endX = (inX - e.clientX);  
@@ -177,6 +178,13 @@ function dragRight() {
         }
         if(elmnt.offsetTop >= 300) {
           elmnt.style.top = 300 + "px";
+        }
+
+        // sets element position to its origin and stops draggin
+        function zeroingElement() {
+          elmnt.style.left = 40 + "px";
+          elmnt.style.top = 290 + "px";
+          closeDragElement();
         }
       }
     }
