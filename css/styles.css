@@ -7,8 +7,12 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-around;
+    justify-content:center;
 }
+
+
+
+
 
 .img {
     height: 100em;
@@ -23,7 +27,20 @@ body, html {
     /* flex-direction: column; */
 
     /* background-color: rgb(153, 51, 51); */
-}   
+}
+@media screen and (max-width: 400px) {
+    .main {
+        transform: rotate(90deg) scale(0.5,0.5);
+        /* height: 90%; */
+        /* width: 90%; */
+        /* margin: auto; */
+
+        
+    }
+
+}
+
+
     .left {
         height: 25em;
         width: 10em;
