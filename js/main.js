@@ -69,6 +69,7 @@ function dragElement(elmnt) {
     
     
   }
+  let dummy = false;
   let toggle = false;
   //pasar diffPer a número sin signo. Luego hacer que vuelva a init al dejar de clicar
   function elementDrag(e) {
@@ -77,37 +78,39 @@ function dragElement(elmnt) {
     toggle = true;};
     
     // console.log(diffPerX);
-    console.log(diffX);
+    console.log(e.clientX);
     
-    if ((diffPerX>90) && (diffPerX<110))
-    {e = e || window.event;
-    e.preventDefault();
+    // if ((diffPerX>90) && (diffPerX<110))
+      if (dummy === false){
+      e = e || window.event;
+      e.preventDefault();
 
 
 
-    // calculate the new cursor position:
-    endX = (inX - e.clientX);  
-    endY = inY - e.clientY;
-    inX = e.clientX;
-    inY = e.clientY;
+      // calculate the new cursor position:
+      endX = (inX - e.clientX);  
+      endY = inY - e.clientY;
+      inX = e.clientX;
+      inY = e.clientY;
 
-    let diffX = inX - endX;
-    diffPerX = ((diffX * 100) / initialX);
-    if(diffPerX < 0) {
-      diffPerX *= -1
-    }
-    
-    // function release() {
-    //   alert("ok");
-    // }
+      let diffX = inX - endX;
+      diffPerX = ((diffX * 100) / initialX);
+      if(diffPerX < 0) {
+        diffPerX *= -1
+      }
+      
+      // function release() {
+      //   alert("ok");
+      // }
 
-    // document.getElementById("mydiv").addEventListener("mouseup", release);
+      // document.getElementById("mydiv").addEventListener("mouseup", release);
 
 
 
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - endY) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - endX) + "px";}
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - endY) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
+    }  
   }
 
   function closeDragElement() {
