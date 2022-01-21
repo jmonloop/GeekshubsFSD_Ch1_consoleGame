@@ -9,11 +9,11 @@ function moveLeft() {
 let rightMovedOut = false;
 function moveRight() {
     if (rightMovedOut === false) {
-        // document.getElementById('_right').classList.toggle('rightMove');
+        document.getElementById('_right').classList.toggle('rightMove');
         rightMovedOut = true;
     }  
 }
-
+let toggle = document.getElementById('_right').classList.toggle;
 function moveCenter() {
     document.getElementById('_left').classList.toggle('leftMove');
     document.getElementById('_right').classList.toggle('rightMove');
@@ -111,16 +111,21 @@ function dragLeft() {
     }
   }
 }
-  function dragRight() {
-    // alert("right");
+
+
+
+
+function dragRight() {
+  if (rightMovedOut === true) {
     dragRightElement(document.getElementById("_joyRight"));
+
     function dragRightElement(elmnt) {
       var endX = 0, endY = 0, inX = 0, inY = 0;
+
       if (document.getElementById(elmnt.id + "header")) {
         // if present, the header is where you move the DIV from:
         document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-        
-      } 
+      }
       else {
         // otherwise, move the DIV from anywhere inside the DIV:
         elmnt.onmousedown = dragMouseDown;
@@ -140,58 +145,48 @@ function dragLeft() {
   
       // Luego hacer que vuelva a init al dejar de clicar
       function elementDrag(e) {
-        console.log(elmnt.offsetTop, "top");
-        console.log(elmnt.offsetLeft, "left");
-  
+        console.log(elmnt.offsetTop, "Rtop");
+        console.log(elmnt.offsetLeft, "Rleft");
       
-          // if (dummy === false){
-          e = e || window.event;
-          e.preventDefault();
-  
-          // calculate the new cursor position:
-          endX = (inX - e.clientX);  
-          endY = inY - e.clientY;
-          inX = e.clientX;
-          inY = e.clientY;
-  
-          let diffX = inX - endX;
-          diffPerX = ((diffX * 100) / initialX);
-          if(diffPerX < 0) {
-            diffPerX *= -1
-          }
-          
-          // set the element's new position:
-          elmnt.style.top = (elmnt.offsetTop - endY) + "px";
-          elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
+        e = e || window.event;
+        e.preventDefault();
 
-          // Limitates dragging when element arrives final position adding +-10 to zeroing position
-          //right joystick zero: left840 top290
-          if(elmnt.offsetLeft <= 830)
-          {
-            elmnt.style.left = 830 + "px";
-          }
-  
-          if(elmnt.offsetLeft >= 850)
-          {
-            elmnt.style.left = 850 + "px";
-          }
-  
-          if(elmnt.offsetTop <= 280) {
-            elmnt.style.top = 280 + "px";
-          }
-          if(elmnt.offsetTop >= 300) {
-            elmnt.style.top = 300 + "px";
-          }
-  
-  
-      }
-  
-      function closeDragElement() {
-        // stop moving when mouse button is released:
-        document.onmouseup = null;
-        document.onmousemove = null;
+        // calculate the new cursor position:
+        endX = (inX - e.clientX);  
+        endY = inY - e.clientY;
+        inX = e.clientX;
+        inY = e.clientY;
+
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - endY) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
+
+        // Limitates dragging when element arrives final position adding +-10 to zeroing position
+        // right joystick zero when assembled: left840 top290
+        // right joystick zero when disassembled: left40 top290
+        if(elmnt.offsetLeft <= 30) {
+          elmnt.style.left = 30 + "px";
+        }
+
+        if(elmnt.offsetLeft >= 50) {
+          elmnt.style.left = 50 + "px";
+        }
+
+        if(elmnt.offsetTop <= 280) {
+          elmnt.style.top = 280 + "px";
+        }
+        if(elmnt.offsetTop >= 300) {
+          elmnt.style.top = 300 + "px";
+        }
       }
     }
+  
+    function closeDragElement() {
+      // stop moving when mouse button is released:
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
   }
+}
   
 
