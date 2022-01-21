@@ -28,17 +28,7 @@ body, html {
 
     /* background-color: rgb(153, 51, 51); */
 }
-@media screen and (max-width: 400px) {
-    .main {
-        transform: rotate(90deg) scale(0.5,0.5);
-        /* height: 90%; */
-        /* width: 90%; */
-        /* margin: auto; */
 
-        
-    }
-
-}
 
 
     .left {
@@ -60,21 +50,44 @@ body, html {
         50% {transform: translateY(-10em);}
         100% {transform:  translateX(-10em);}
     }
+    @keyframes moveLeftMob {
+        0% {transform: translateY(0em) translateX(0);}
+        50% {transform: translateY(-1em);}
+        100% {transform:  translateX(-1em);}
+    }
+
     @keyframes moveRight {
         0% {transform: translateY(0em) translateX(0);}
         50% {transform: translateY(+10em);}
         100% {transform:  translateX(+10em);}
+    }
+    @keyframes moveRightMob {
+        0% {transform: translateY(0em) translateX(0);}
+        50% {transform: translateY(1em);}
+        100% {transform:  translateX(1em);}
     }
 
     .leftMove {
         animation-name: moveLeft;
         animation-duration: 2s;
     }
+
     .rightMove {
         animation-name: moveRight;
         animation-duration: 2s;
     }
-
+    @media screen and (max-width: 390px) {
+        .main {
+            transform: rotate(90deg) scale(0.8,0.8);
+        }
+        .leftMove {
+            animation-name: moveLeftMob;
+            animation-duration: 2s;
+        }
+        .rightMove {
+            animation-name: moveRightMob;
+            animation-duration: 2s;
+        }
 
 
         .leftTop {
