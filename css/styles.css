@@ -88,7 +88,7 @@ body, html {
             animation-name: moveRightMob;
             animation-duration: 2s;
         }
-
+    }
 
         .leftTop {
             background: #00b7ff;
@@ -107,8 +107,6 @@ body, html {
             justify-content:space-around;
             
             border-radius: 50% 0 0 0;
-
-            
 
         }
             .joystickLeft {
