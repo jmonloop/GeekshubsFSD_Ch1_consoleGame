@@ -65,11 +65,18 @@ function dragElement(elmnt) {
     document.onmousemove = elementDrag;
     
     
+    
   }
-//pasar diffPer a número sin signo. Luego hacer que vuelva a init al dejar de clicar
+  let toggle = false;
+  //pasar diffPer a número sin signo. Luego hacer que vuelva a init al dejar de clicar
   function elementDrag(e) {
-
-    if(diffPerX < 110 || diffPerX > 90 )
+    
+    if (toggle === false) {diffPerX = 100
+    toggle = true;};
+    
+    console.log(diffPerX);
+    
+    if ((diffPerX>90) && (diffPerX<110))
     {e = e || window.event;
     e.preventDefault();
 
@@ -83,7 +90,10 @@ function dragElement(elmnt) {
 
     let diffX = inX - endX;
     diffPerX = ((diffX * 100) / initialX);
-    console.log(diffPerX);
+    if(diffPerX < 0) {
+      diffPerX *= -1
+    }
+    
 
 
     // set the element's new position:
