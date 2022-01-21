@@ -201,8 +201,11 @@ body, html {
                         background: -webkit-linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
                         background: -moz-linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
 
-                        height: 50%;
+                        height: 65%;
                         width: 70%;
+
+                        margin-top: 0.5em;
+                        margin-bottom: 0.5em;
 
                         border-radius: 100%;
                     }

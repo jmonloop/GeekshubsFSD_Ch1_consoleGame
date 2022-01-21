@@ -1,7 +1,7 @@
 let leftMovedOut = false;
 function moveLeft() {
     if (leftMovedOut === false) {
-        document.getElementById('_left').classList.toggle('leftMove');
+        // document.getElementById('_left').classList.toggle('leftMove');
         leftMovedOut = true;
     }  
 }
@@ -9,7 +9,7 @@ function moveLeft() {
 let rightMovedOut = false;
 function moveRight() {
     if (rightMovedOut === false) {
-        document.getElementById('_right').classList.toggle('rightMove');
+        // document.getElementById('_right').classList.toggle('rightMove');
         rightMovedOut = true;
     }  
 }
@@ -31,14 +31,13 @@ function switchOnOff() {
     }
 }
 
-function pushbutton(htmlId, cssClass) {
-  let oneShot = false;
-  if(oneShot === false) {
-    document.getElementById(htmlId).classList.toggle(cssClass);
-    toggle = true;
-  }
+function pressButton() {
+  document.getElementById('_leftTopButton').classList.toggle('pressedButton')
 }
-
+function leaveButton() {
+  document.getElementById('_leftTopButton').classList.remove('pressedButton')
+  document.getElementById('_leftTopButton').classList.add('button', 'grid', 'topButton');
+}
 
   
 
