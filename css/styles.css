@@ -194,7 +194,17 @@ body, html {
                         width: 70%;
 
                         border-radius: 100%;
+                    }
+                    .pressedButton {
+                        background: #393535;
+                        background: linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
+                        background: -webkit-linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
+                        background: -moz-linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
 
+                        height: 50%;
+                        width: 70%;
+
+                        border-radius: 100%;
                     }
                     .topButton {
                         margin-bottom: -1.5em;

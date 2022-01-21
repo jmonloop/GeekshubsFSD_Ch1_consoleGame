@@ -31,6 +31,13 @@ function switchOnOff() {
     }
 }
 
+function pushbutton(htmlId, cssClass) {
+  let oneShot = false;
+  if(oneShot === false) {
+    document.getElementById(htmlId).classList.toggle(cssClass);
+    toggle = true;
+  }
+}
 
 
   
