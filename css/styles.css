@@ -171,19 +171,34 @@ body, html {
                 height: 100%;
                 width: 100%;
 
-                display: grid;
-                grid-template-columns: 33% 33% 33%;
-                grid-template-rows: 33%;
+                display: flex;
+                flex-direction: row;
                 justify-items: center;
                 align-items: center;
-
-                /* margin-top: 2em; */
-                margin-bottom: 2em;
                 
+                margin-left: 0.8em;
             }
-                /* .grid {
-                    border-style: solid;
-                } */
+                .bttnCol {
+                    /* background-color: tomato; */
+                    height: 100%;
+                    width: 33%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-items: center;
+                    align-items: center;   
+                }  
+                .bttonRow {
+                    /* background-color: turquoise; */
+                    height: 33%;
+                    width: 100%;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-items: center;
+                    align-items: center;   
+                    }
+
                     .button {
                         background: #393535;
                         background: linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
@@ -201,16 +216,16 @@ body, html {
                         background: -webkit-linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
                         background: -moz-linear-gradient(90deg,#393535 0%, #0e0d0d 80%);
 
-                        height: 65%;
+                        height: 60%;
                         width: 70%;
 
-                        margin-top: 0.5em;
-                        margin-bottom: 0.5em;
+                        margin-top: 0.8em;
+                        margin-bottom: 0.8em;
 
                         border-radius: 100%;
                     }
                     .topButton {
-                        margin-bottom: -1.5em;
+                        /* margin-bottom: -1.5em; */
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -226,7 +241,7 @@ body, html {
                             border-radius: 100%;
                         }
                     .rightButton {
-                        margin-left: -1.5em;
+                        /* margin-left: -1.5em; */
 
                         display: flex;
                         flex-direction: column;
@@ -234,7 +249,7 @@ body, html {
                         justify-content:center;
                     }
                     .bottomButton {
-                        margin-top: -1.5em;
+                        /* margin-top: -1.5em; */
 
                         display: flex;
                         flex-direction: column;
@@ -242,7 +257,7 @@ body, html {
                         justify-content:center;
                     }
                     .leftButton {
-                        margin-right: -1.5em;
+                        /* margin-right: -1.5em; */
 
                         display: flex;
                         flex-direction: column;
@@ -307,17 +322,13 @@ body, html {
         height: 100%;
         width: 100%;
 
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        grid-template-rows: 33%;
+        display: flex;
+        flex-direction: row;
         justify-items: center;
         align-items: center;
-
-        /* margin-top: 2em; */
-        /* margin-bottom: -2em; */
         
+        margin-left: 0.8em;
     }
-
 
 
 

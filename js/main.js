@@ -1,7 +1,7 @@
 let leftMovedOut = false;
 function moveLeft() {
     if (leftMovedOut === false) {
-        // document.getElementById('_left').classList.toggle('leftMove');
+        document.getElementById('_left').classList.toggle('leftMove');
         leftMovedOut = true;
     }  
 }
@@ -9,15 +9,15 @@ function moveLeft() {
 let rightMovedOut = false;
 function moveRight() {
     if (rightMovedOut === false) {
-        // document.getElementById('_right').classList.toggle('rightMove');
+        document.getElementById('_right').classList.toggle('rightMove');
         rightMovedOut = true;
     }  
 }
-let toggle = document.getElementById('_right').classList.toggle;
-function moveCenter() {
-    document.getElementById('_left').classList.toggle('leftMove');
-    document.getElementById('_right').classList.toggle('rightMove');
-}
+// let toggle = document.getElementById('_right').classList.toggle;
+// function moveCenter() {
+//     document.getElementById('_left').classList.toggle('leftMove');
+//     document.getElementById('_right').classList.toggle('rightMove');
+// }
 
 let switchedOn = false;
 function switchOnOff() {
@@ -31,12 +31,12 @@ function switchOnOff() {
     }
 }
 
-function pressButton() {
-  document.getElementById('_leftTopButton').classList.toggle('pressedButton')
+function pressButton(elmnt) {
+  document.getElementById(elmnt).classList.toggle('pressedButton')
 }
-function leaveButton() {
-  document.getElementById('_leftTopButton').classList.remove('pressedButton')
-  document.getElementById('_leftTopButton').classList.add('button', 'grid', 'topButton');
+function leaveButton(elmnt) {
+  document.getElementById(elmnt).classList.remove('pressedButton')
+  document.getElementById(elmnt).classList.add('button', 'grid', 'topButton');
 }
 
   
