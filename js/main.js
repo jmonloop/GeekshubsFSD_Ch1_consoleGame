@@ -78,10 +78,11 @@ function dragElement(elmnt) {
     toggle = true;};
     
     // console.log(diffPerX);
-    console.log(e.clientX);
-    
-    // if ((diffPerX>90) && (diffPerX<110))
-      if (dummy === false){
+    // console.log(e.clientX);
+    //let finalX = elmnt.style.left;
+    console.log(elmnt.offsetLeft, "manolo");
+   if ((elmnt.offsetLeft>30) && (elmnt.offsetLeft<50)){
+      // if (dummy === false){
       e = e || window.event;
       e.preventDefault();
 
@@ -108,8 +109,11 @@ function dragElement(elmnt) {
 
 
       // set the element's new position:
+
       elmnt.style.top = (elmnt.offsetTop - endY) + "px";
       elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
+
+      
     }  
   }
 
