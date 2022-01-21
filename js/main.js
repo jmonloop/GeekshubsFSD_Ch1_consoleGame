@@ -1,7 +1,7 @@
 let leftMovedOut = false;
 function moveLeft() {
     if (leftMovedOut === false) {
-        document.getElementById('_left').classList.toggle('leftMove');
+        // document.getElementById('_left').classList.toggle('leftMove');
         leftMovedOut = true;
     }  
 }
@@ -45,6 +45,7 @@ function dragElement(elmnt) {
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    
   } 
   else {
     // otherwise, move the DIV from anywhere inside the DIV:
@@ -52,6 +53,7 @@ function dragElement(elmnt) {
   }
   let initialX = 0;
   let diffPerX = 0;
+  let diffX = 0;
   function dragMouseDown(e) {
      
         e = e || window.event;
@@ -74,7 +76,8 @@ function dragElement(elmnt) {
     if (toggle === false) {diffPerX = 100
     toggle = true;};
     
-    console.log(diffPerX);
+    // console.log(diffPerX);
+    console.log(diffX);
     
     if ((diffPerX>90) && (diffPerX<110))
     {e = e || window.event;
@@ -94,6 +97,12 @@ function dragElement(elmnt) {
       diffPerX *= -1
     }
     
+    // function release() {
+    //   alert("ok");
+    // }
+
+    // document.getElementById("mydiv").addEventListener("mouseup", release);
+
 
 
     // set the element's new position:
@@ -104,6 +113,7 @@ function dragElement(elmnt) {
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
+
     document.onmousemove = null;
   }
 }
