@@ -1,4 +1,6 @@
 body, html {
+    /* background: black; */
+
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -483,13 +485,15 @@ body, html {
         border-radius: 2%;
     }
 
-    .screen {
+    .screenOff {
         background: #676262;
         background: linear-gradient(124deg,#676262 0%, #0e0d0d 80%);
         background: -webkit-linear-gradient(124deg,#676262 0%, #0e0d0d 80%);
         background: -moz-linear-gradient(124deg,#676262 0%, #0e0d0d 80%);
         height: 90%;
         width: 85%;
+
+        z-index: 200;
 
         display: flex;
         flex-direction: column;
@@ -499,6 +503,29 @@ body, html {
 
         border-radius: 2%;
     }
+    .screenOn {
+
+
+        height: 90%;
+        width: 85%;
+
+        /* z-index: 200; */
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        border-radius: 2%;
+    }
+
+
+      .game {
+          background-color: green;
+          height: 100%;
+          width: 100%
+      }
 
     .gapLeft {
         background-color: white;
@@ -522,4 +549,8 @@ body, html {
         width: 1em;
 
         border-radius: 0 0 0 50%;
+    }
+
+    canvas {
+        z-index: 1000;
     }
