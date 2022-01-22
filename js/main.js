@@ -24,21 +24,34 @@ let switchedOn = false;
 let switchedOff = true;
 function switchOnOff() {
     if(switchedOn === false) {
-        document.getElementById('_onOffswitch').classList.toggle('switchOn');
+      document.getElementById('_screen').classList.toggle('screenOff');
+      document.getElementById('_onOffswitch').classList.toggle('switchOn');
+      setTimeout(function(){
+        
         document.getElementById('_screen').classList.toggle('screenOn');
         document.getElementById('_video').classList.toggle('videoOn');
-
+        
         playVid();
-
+        
         switchedOn = true;
         switchedOff = false;
+        console.log(`1on=${switchedOn} 1off=${switchedOff}`);
+      }, 3000);
     }
     if((switchedOn === true)) {
-        document.getElementById('_onOffswitch').classList.toggle('switchOff');
+      document.getElementById('_onOffswitch').classList.remove('switchOn');
+      document.getElementById('_onOffswitch').classList.toggle('switchOff');
 
-        switchedOn = false;
-        switchedOff = true;
+      document.getElementById('_video').classList.remove('videoOn');
+      document.getElementById('_video').classList.toggle('videoOff');
+
+
+      switchedOn = false;
+      switchedOff = true;
+      console.log(`2on=${switchedOn} 2off=${switchedOff}`);
+      
     }
+    // console.log(`on= ${switchedOn}      off=${switchedOff}`);
 }
 
 function pressButton(elmnt) {
