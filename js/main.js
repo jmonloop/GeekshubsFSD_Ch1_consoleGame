@@ -19,11 +19,14 @@ function moveRight() {
 //     document.getElementById('_right').classList.toggle('rightMove');
 // }
 
+
+
 let switchedOn = false;
 function switchOnOff() {
     if(switchedOn === false) {
         document.getElementById('_onOffswitch').classList.toggle('switchOn');
         document.getElementById('_screen').classList.toggle('screenOn');
+
         switchedOn = true;
     }
     if(switchedOn === true) {
@@ -37,6 +40,9 @@ function switchOnOff() {
 
 function pressButton(elmnt) {
   document.getElementById(elmnt).classList.toggle('pressedButton')
+  blueButton = true;
+
+  // console.log("buttn");
 }
 function leaveButton(elmnt) {
   document.getElementById(elmnt).classList.remove('pressedButton')
@@ -75,8 +81,16 @@ function dragLeft() {
     }
 
     function elementDrag(e) {
-      console.log(elmnt.offsetTop, "Ltop");
-      console.log(elmnt.offsetLeft, "Lleft");
+
+
+
+
+
+      
+
+
+
+
       e = e || window.event;
       e.preventDefault();
       document.onmouseup = zeroingElement;
@@ -212,15 +226,20 @@ function dragRight() {
 
 
 
+      //Intitates control variables for blue player
+      let blueButton = false;
+      let listenbuttons = false;
 
-
+      if(blueUp === true || blueDown === true || blueLeft === true || blueRight === true || blueButton === true){
+        listenbuttons = true;
+      }
 
 function bomberman() {
   const canvas = document.getElementById('game');
   const context = canvas.getContext('2d');
   const grid = 12;
   const numRows = 13;
-  const numCols = 15;
+  const numCols = 25;
 
   // create a new canvas and draw the soft wall image. then we can use this
   // canvas to draw the images later on
@@ -234,6 +253,7 @@ function bomberman() {
 
   // 1st row brick
   softWallCtx.fillRect(1, 1, grid - 2, 20);
+  // softWallCtx.fillRect(2, 1, grid - 2, 20);
 
   // 2nd row bricks
   softWallCtx.fillRect(0, 23, 20, 18);
@@ -545,45 +565,52 @@ function bomberman() {
   }
 
   // listen to keyboard events to move the snake
-  document.addEventListener('keydown', function(e) {
+
+  document.getElementById('_joyLeft').addEventListener('mousedown', function() {
+    console.log("moving");
+    
     let row = player.row;
     let col = player.col;
+    
+  // left arrow key
+  if (blueLeft == true) {
+    col--;
+    console.log("left");
+  }
+  // up arrow key
+  else if (blueUp == true) {
+    row--;
+    console.log("up");
+  }
+  // right arrow key
+  else if (blueRight == true) {
+    col++;
+    console.log("right");
+  }
+  // down arrow key
+  else if (blueDown == true) {
+    row++;
+    console.log("down");
+  }
+  // space key (bomb)
+  else if (
+    blueButton == true && !cells[row][col] &&
+    // count the number of bombs the player has placed
+    entities.filter((entity) => {
+      return entity.type === types.bomb && entity.owner === player
+    }).length < player.numBombs
+  ) {
+    // place bomb
+    const bomb = new Bomb(row, col, player.bombSize, player);
+    entities.push(bomb);
+    cells[row][col] = types.bomb;
+  }
 
-    // left arrow key
-    if (e.which === 37) {
-      col--;
-    }
-    // up arrow key
-    else if (e.which === 38) {
-      row--;
-    }
-    // right arrow key
-    else if (e.which === 39) {
-      col++;
-    }
-    // down arrow key
-    else if (e.which === 40) {
-      row++;
-    }
-    // space key (bomb)
-    else if (
-      e.which === 32 && !cells[row][col] &&
-      // count the number of bombs the player has placed
-      entities.filter((entity) => {
-        return entity.type === types.bomb && entity.owner === player
-      }).length < player.numBombs
-    ) {
-      // place bomb
-      const bomb = new Bomb(row, col, player.bombSize, player);
-      entities.push(bomb);
-      cells[row][col] = types.bomb;
-    }
-
-    // don't move the player if something is already at that position
-    if (!cells[row][col]) {
-      player.row = row;
-      player.col = col;
-    }
+  // don't move the player if something is already at that position
+  if (!cells[row][col]) {
+    player.row = row;
+    player.col = col;
+  }
   });
 
   // start the game
