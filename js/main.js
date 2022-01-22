@@ -20,6 +20,10 @@ function playVid(){
   vid.play();
 }
 
+function fadeout(){
+  document.getElementById('_screen').classList.toggle('fadeout');
+}
+
 let switchedOn = false;
 let switchedOff = true;
 function switchOnOff() {
@@ -35,20 +39,24 @@ function switchOnOff() {
         
         switchedOn = true;
         switchedOff = false;
-        console.log(`1on=${switchedOn} 1off=${switchedOff}`);
+        // console.log(`1on=${switchedOn} 1off=${switchedOff}`);
       }, 3000);
+      setTimeout(function(){fadeout()}, 8000);
     }
     if((switchedOn === true)) {
+      
       document.getElementById('_onOffswitch').classList.remove('switchOn');
       document.getElementById('_onOffswitch').classList.toggle('switchOff');
-
+      
       document.getElementById('_video').classList.remove('videoOn');
       document.getElementById('_video').classList.toggle('videoOff');
-
+      
+      document.getElementById('_screen').classList.remove('fadeout');
+      document.getElementById('_screen').classList.toggle('screenOff');
 
       switchedOn = false;
       switchedOff = true;
-      console.log(`2on=${switchedOn} 2off=${switchedOff}`);
+      // console.log(`2on=${switchedOn} 2off=${switchedOff}`);
       
     }
     // console.log(`on= ${switchedOn}      off=${switchedOff}`);
