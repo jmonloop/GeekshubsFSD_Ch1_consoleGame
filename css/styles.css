@@ -154,7 +154,7 @@ body, html {
             background: linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
             background: -webkit-linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
             background: -moz-linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
-            height: 8.33em;
+            height: 7.33em;
             width: 10em;
 
             display: flex;
@@ -198,7 +198,9 @@ body, html {
                     display: flex;
                     flex-direction: row;
                     justify-items: center;
-                    align-items: center;   
+                    align-items: center; 
+                    
+                    
                     }
 
                     .button {
@@ -275,7 +277,7 @@ body, html {
             background: linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
             background: -webkit-linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
             background: -moz-linear-gradient(180deg,#00b7ff 0%, #149fd7 80%);
-            height: 8.33em;
+            height: 9.33em;
             width: 10em;
 
             margin-top:auto;
@@ -304,7 +306,7 @@ body, html {
         background: linear-gradient(180deg,#c0552b 0%, #ff4800 80%);
         background: -webkit-linear-gradient(180deg,#c0552b 0%, #ff4800 80%);
         background: -moz-linear-gradient(180deg,#c0552b 0%, #ff4800 80%);
-        height: 8.33em;
+        height: 9.33em;
         width: 10em;
 
         display: flex;
@@ -339,7 +341,7 @@ body, html {
         background: linear-gradient(180deg,#c0552b 0%, #ff4800 80%);
         background: -webkit-linear-gradient(180deg,#c0552b 0%, #ff4800 80%);
         background: -moz-linear-gradient(180deg,#c0552b 0%, #ff4800 80%);
-        height: 8.33em;
+        height: 7.33em;
         width: 10em;
 
         display: flex;
