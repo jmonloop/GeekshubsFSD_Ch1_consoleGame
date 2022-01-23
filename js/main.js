@@ -54,7 +54,7 @@ function switchOnOff() {
         
         switchedOn = true;
         switchedOff = false;
-        // console.log(`1on=${switchedOn} 1off=${switchedOff}`);
+
       }, 3000);
       setTimeout(function(){fadeout()}, 8000);
     }
@@ -75,16 +75,10 @@ function switchOnOff() {
       audio.pause();
       audio.currentTime = 0;
 
-
-      
-
-
       switchedOn = false;
       switchedOff = true;
-      // console.log(`2on=${switchedOn} 2off=${switchedOff}`);
-      
     }
-    // console.log(`on= ${switchedOn}      off=${switchedOff}`);
+
 }
 
 function pressButton(elmnt) {
@@ -210,9 +204,6 @@ function dragRight() {
       }
   
       function elementDrag(e) {
-        console.log(elmnt.offsetTop, "Rtop");
-        console.log(elmnt.offsetLeft, "Rleft");
-      
         e = e || window.event;
         e.preventDefault();
         document.onmouseup = zeroingElement;
@@ -470,35 +461,36 @@ function bomberman() {
         const col = bomb.col + dir.col * i;
         const cell = cells[row][col];
 
+        
         // stop the explosion if it hit a wall
         if (cell === types.wall) {
           return;
         }
-
+        
         // center of the explosion is the first iteration of the loop
         entities.push(new Explosion(row, col, dir, i === 0 ? true : false));
         cells[row][col] = null;
-
+        
         // bomb hit another bomb so blow that one up too
         if (cell === types.bomb) {
-
+          
           // find the bomb that was hit by comparing positions
           const nextBomb = entities.find((entity) => {
             return (
               entity.type === types.bomb &&
               entity.row === row && entity.col === col
-            );
-          });
-          blowUpBomb(nextBomb);
+              );
+            });
+            blowUpBomb(nextBomb);
+          }
+          
+          // stop the explosion if hit anything
+          if (cell) {
+            return;
+          }
         }
-
-        // stop the explosion if hit anything
-        if (cell) {
-          return;
-        }
-      }
-    });
-  }
+      });
+    }
 
   // bomb constructor function
   function Bomb(row, col, size, owner) {
@@ -610,6 +602,15 @@ function bomberman() {
         context.fillRect(x + 12, y, grid - 24, grid);
       }
     };
+
+    if((this.col === playerRed.col) && (this.row === playerRed.row)) {
+      console.log("red Dead");
+    }
+    if((this.col === playerBlue.col) && (this.row === playerBlue.row)) {
+      console.log("blue Dead");
+    }
+
+
   }
 
   // player BLUE character (just a simple blue circle)
@@ -730,11 +731,7 @@ document.addEventListener('keydown', function(e) {
     cells[row][col] = types.bombBlue;
     bombBlue.row = row;
     bombBlue.col = col;
-    // console.log(`BlueBomb= ${bombBlue.col} ${bombBlue.row}`);
 
-    if((bombBlue.col === playerRed.col) && (bombBlue.row === playerRed.row)) {
-      console.log("Red player is dead");
-    }
   }
 
   // don't move the player if something is already at that position
@@ -742,7 +739,7 @@ document.addEventListener('keydown', function(e) {
     playerBlue.row = row;
     playerBlue.col = col;
   }
-  // console.log(`BluePlayer= ${playerBlue.col} ${playerBlue.row}`);
+
 
 
 
@@ -783,10 +780,8 @@ document.addEventListener('keydown', function(e) {
     cells[row][col] = types.bombRed;
     bombRed.row = row;
     bombRed.col = col;
-    // console.log(`RedBomb= ${bombRed.col} ${bombRed.row}`);
-    if((bombRed.col === playerBlue.col) && (bombRed.row === playerBlue.row)) {
-      console.log("Blue player is dead");
-    }
+
+  
   }
 
   // don't move playerRed if something is already at that position
@@ -794,7 +789,7 @@ document.addEventListener('keydown', function(e) {
     playerRed.row = row;
     playerRed.col = col;
   }
-  // console.log(`RedPlayer= ${playerRed.col} ${playerRed.row}`);
+
 });
 
 
