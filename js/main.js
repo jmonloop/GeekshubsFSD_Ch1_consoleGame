@@ -355,21 +355,6 @@ function bomberman() {
     ['▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉']
   ];  
   
-  // const template = [
-  //   ['▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉'],
-  //   ['▉','x','x',   ,   ,   ,   ,   ,   ,   ,   ,   ,'x','x','▉'],
-  //   ['▉','x','▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉','x','▉'],
-  //   ['▉','x',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'x','▉'],
-  //   ['▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉'],
-  //   ['▉',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'▉'],
-  //   ['▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉'],
-  //   ['▉',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'▉'],
-  //   ['▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉'],
-  //   ['▉','x',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'x','▉'],
-  //   ['▉','x','▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉','x','▉'],
-  //   ['▉','x','x',   ,   ,   ,   ,   ,   ,   ,   ,   ,'x','x','▉'],
-  //   ['▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉']
-  // ];
 
   // populate the level with walls and soft walls
   function generateLevel() {
@@ -633,25 +618,25 @@ document.addEventListener('keydown', function(e) {
   let row = player.row;
   let col = player.col;
 
-  // left arrow key
-  if (e.which === 37) {
+  // left = a
+  if (e.which === 65) {
     col--;
   }
-  // up arrow key
-  else if (e.which === 38) {
+  // up = w
+  else if (e.which === 87) {
     row--;
   }
-  // right arrow key
-  else if (e.which === 39) {
+  // right = d
+  else if (e.which === 68) {
     col++;
   }
-  // down arrow key
-  else if (e.which === 40) {
+  // down = s
+  else if (e.which === 83) {
     row++;
   }
-  // space key (bomb)
+  // ctrl left (bomb)
   else if (
-    e.which === 32 && !cells[row][col] &&
+    e.which === 17 && !cells[row][col] &&
     // count the number of bombs the player has placed
     entities.filter((entity) => {
       return entity.type === types.bomb && entity.owner === player
