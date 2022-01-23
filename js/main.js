@@ -19,10 +19,14 @@ let vid = document.getElementById('_video');
 function playVid(){
   vid.play();
 }
-//REPLACE CLASS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
 function fadeout(){
   document.getElementById('_video').classList.toggle('fadeout');
-  setTimeout(function(){bomberman()}, 5000);
+  setTimeout(function(){
+    if (document.getElementById('_onOffswitch').classList.contains('switchOff') === false) {
+      bomberman()  
+    } 
+  }, 5000);
 }
 
 
@@ -41,10 +45,10 @@ function switchOnOff() {
 
 
       setTimeout(function(){
-
-        document.getElementById('_video').classList.toggle('videoOn');
         
         playVid();
+        document.getElementById('_video').classList.toggle('videoOn');
+        
         
         switchedOn = true;
         switchedOff = false;
@@ -54,16 +58,21 @@ function switchOnOff() {
     }
     if((switchedOn === true)) {
       
-      // document.getElementById('_onOffswitch').classList.remove('switchOn');
-      // document.getElementById('_onOffswitch').classList.toggle('switchOff');
+      document.getElementById('_onOffswitch').classList.remove('switchOn');
+      document.getElementById('_onOffswitch').classList.add('switchOff');
       
-      // document.getElementById('_video').classList.remove('videoOn');
+      document.getElementById('_video').classList.remove('videoOn');
+      document.getElementById('_video').classList.add('videoOff');      
+      
+      document.getElementById('_game').classList.remove('gameOn');
+      document.getElementById('_game').classList.add('gameOff');      
+      
+      document.getElementById('_screen').classList.remove('screenOn');
+      document.getElementById('_screen').classList.add('screenOff');
 
-      // document.getElementById('_video').classList.replace('videoOn', 'videoOff');
-      // document.getElementById('_video').classList.toggle('videoOff');
+
       
-      // document.getElementById('_screen').classList.remove('fadeout');
-      // document.getElementById('_screen').classList.toggle('screenOff');
+
 
       switchedOn = false;
       switchedOff = true;
@@ -555,7 +564,7 @@ function bomberman() {
       const y = (this.row + 0.5) * grid;
 
       context.save();
-      context.fillStyle = 'white';
+      context.fillStyle = '#00b7ff';
       context.beginPath();
       context.arc(x, y, this.radius, 0, 2 * Math.PI);
       context.fill();

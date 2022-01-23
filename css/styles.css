@@ -446,7 +446,7 @@ body, html {
     }
     @keyframes switchOff {
         0% {transform: translateX(0);}
-        100% {transform:  translateX(-2em);}
+        100% {transform:  translateX(0em);}
     }
 
     .switchOn {
