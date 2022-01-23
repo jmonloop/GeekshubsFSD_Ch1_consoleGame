@@ -536,11 +536,30 @@ body, html {
             display:block;
         }
 
+        .bombermanScreenOn {
+            height: 100%;
+            width: 100%;
+
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .bombImg {
+                height: 100%;
+                width: 100%;
+            }
+
+        .bombermanScreenOff {
+            display: none;
+        }
+
 
         .gameOff {
           display: none;
           height: 100%;
           width: 100%
+
+          
         }
         .gameOn {
             height: 100%;

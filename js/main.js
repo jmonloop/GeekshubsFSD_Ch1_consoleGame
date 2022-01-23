@@ -24,10 +24,12 @@ function fadeout(){
   document.getElementById('_video').classList.toggle('fadeout');
   setTimeout(function(){
     if (document.getElementById('_onOffswitch').classList.contains('switchOff') === false) {
-      bomberman()  
+      bombermanScreen()  
     } 
   }, 5000);
 }
+
+
 
 
 
@@ -69,6 +71,9 @@ function switchOnOff() {
       
       document.getElementById('_screen').classList.remove('screenOn');
       document.getElementById('_screen').classList.add('screenOff');
+
+      audio.pause();
+      audio.currentTime = 0;
 
 
       
@@ -317,17 +322,24 @@ window.addEventListener("keyup", function(event){
 
 
 
+function bombermanScreen(){
+  document.getElementById('_video').classList.replace('videoOn', 'videoOff');
+  document.getElementById('_bombermanScreen').classList.replace('bombermanScreenOff', 'bombermanScreenOn');
+
+  let anyClick = window.addEventListener.onmousedown;
+  if(anyClick) {
+    bomberman();
+  }
+}
 
 
-
+let audio = new Audio('/img/bomber.mp3');
 
 function bomberman() {
-  document.getElementById('_video').classList.replace('videoOn', 'videoOff');
+  document.getElementById('_bombermanScreen').classList.replace('bombermanScreenOn', 'bombermanScreenOff');
   document.getElementById('_game').classList.replace('gameOff', 'gameOn');
 
-  let audio = new Audio('/img/bomber.mp3');
   audio.play();
-
 
 
   const canvas = document.getElementById('_game');
