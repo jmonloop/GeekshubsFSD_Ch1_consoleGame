@@ -350,7 +350,7 @@ function bomberman() {
     ['▉',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'▉'],
     ['▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉'],
     ['▉','x',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'x','▉'],
-    ['▉','x','▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉','x','▉',   ,'▉'],
+    ['▉','x','▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'▉',   ,'x','x','▉',   ,'▉'],
     ['▉','x','x',   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,   ,'x','x','▉'],
     ['▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉','▉']
   ];  
@@ -553,8 +553,8 @@ function bomberman() {
     };
   }
 
-  // player character (just a simple circle)
-  const player = {
+  // player BLUE character (just a simple blue circle)
+  const playerBlue = {
     row: 1,
     col: 1,
     numBombs: 1,
@@ -571,6 +571,25 @@ function bomberman() {
       context.fill();
     }
   }
+
+    // player RED character (just a simple red circle)
+    const playerRed = {
+      row: 11,
+      col: 23,
+      numBombs: 1,
+      bombSize: 3,
+      radius: grid * 0.35,
+      render() {
+        const x = (this.col + 0.5) * grid;
+        const y = (this.row + 0.5) * grid;
+  
+        context.save();
+        context.fillStyle = '#c0552b';
+        context.beginPath();
+        context.arc(x, y, this.radius, 0, 2 * Math.PI);
+        context.fill();
+      }
+    }
 
   // game loop
   let last;
@@ -610,13 +629,14 @@ function bomberman() {
     // remove dead entities
     entities = entities.filter((entity) => entity.alive);
 
-    player.render();
+    playerBlue.render();
+    playerRed.render();
   }
 
-  // listen to keyboard events to move the snake
+  // listen to keyboard events to move playerBlue
 document.addEventListener('keydown', function(e) {
-  let row = player.row;
-  let col = player.col;
+  let row = playerBlue.row;
+  let col = playerBlue.col;
 
   // left = a
   if (e.which === 65) {
@@ -637,21 +657,63 @@ document.addEventListener('keydown', function(e) {
   // ctrl left (bomb)
   else if (
     e.which === 17 && !cells[row][col] &&
-    // count the number of bombs the player has placed
+    // count the number of bombs the playerBlue has placed
     entities.filter((entity) => {
-      return entity.type === types.bomb && entity.owner === player
-    }).length < player.numBombs
+      return entity.type === types.bomb && entity.owner === playerBlue
+    }).length < playerBlue.numBombs
   ) {
     // place bomb
-    const bomb = new Bomb(row, col, player.bombSize, player);
+    const bomb = new Bomb(row, col, playerBlue.bombSize, playerBlue);
     entities.push(bomb);
     cells[row][col] = types.bomb;
   }
 
   // don't move the player if something is already at that position
   if (!cells[row][col]) {
-    player.row = row;
-    player.col = col;
+    playerBlue.row = row;
+    playerBlue.col = col;
+  }
+});
+
+// listen to keyboard events to move playerRed
+document.addEventListener('keydown', function(e) {
+  let row = playerRed.row;
+  let col = playerRed.col;
+
+  // left arrow key
+  if (e.which === 37) {
+    col--;
+  }
+  // up arrow key
+  else if (e.which === 38) {
+    row--;
+  }
+  // right arrow key
+  else if (e.which === 39) {
+    col++;
+  }
+  // down arrow key
+  else if (e.which === 40) {
+    row++;
+  }
+  // altGr (bomb)
+  else if (
+    e.which === 18 && !cells[row][col] &&
+    // count the number of bombs the playerRed has placed
+    entities.filter((entity) => {
+      return entity.type === types.bomb && entity.owner === playerRed
+    }).length < playerRed.numBombs
+  ) {
+    // place bomb
+    const bomb = new Bomb(row, col, playerRed.bombSize, playerRed);
+    entities.push(bomb);
+    cells[row][col] = types.bomb;
+  }
+
+  // don't move playerRed if something is already at that position
+  if (!cells[row][col]) {
+    playerRed.row = row;
+    playerRed.col = col;
   }
 });
 
