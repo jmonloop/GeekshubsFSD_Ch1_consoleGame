@@ -551,6 +551,10 @@ function bomberman() {
     };
   }
 
+
+  let blueAlive = true;
+  let redAlive = true;
+  
   // explosion constructor function
   function Explosion(row, col, dir, center) {
     this.row = row;
@@ -604,10 +608,10 @@ function bomberman() {
     };
 
     if((this.col === playerRed.col) && (this.row === playerRed.row)) {
-      console.log("red Dead");
+      redAlive = false;
     }
     if((this.col === playerBlue.col) && (this.row === playerBlue.row)) {
-      console.log("blue Dead");
+      blueAlive = false;
     }
 
 
@@ -688,9 +692,12 @@ function bomberman() {
 
     // remove dead entities
     entities = entities.filter((entity) => entity.alive);
-
-    playerBlue.render();
-    playerRed.render();
+    if(blueAlive === true) {
+      playerBlue.render();
+    }
+    if(redAlive === true) {
+      playerRed.render();
+    }
   }
 
   
