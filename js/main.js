@@ -127,16 +127,6 @@ function dragLeft() {
     }
 
     function elementDrag(e) {
-
-
-
-
-
-      
-
-
-
-
       e = e || window.event;
       e.preventDefault();
       document.onmouseup = zeroingElement;
@@ -186,7 +176,6 @@ function dragLeft() {
 }
 
 
-
 function dragRight() {
   if (rightMovedOut === true) {
     dragRightElement(document.getElementById("_joyRight"));
@@ -234,8 +223,7 @@ function dragRight() {
         elmnt.style.left = (elmnt.offsetLeft - endX) + "px";
 
         // Limitates dragging when element arrives final position adding +-10 to zeroing position
-        // right joystick zero when assembled: left840 top290
-        // right joystick zero when disassembled: left40 top290
+        // right joystick zero: left40 top290
         if(elmnt.offsetLeft <= 30) {
           elmnt.style.left = 30 + "px";
         }
@@ -267,6 +255,63 @@ function dragRight() {
     }
   }
 }
+
+
+
+let joyL = document.getElementById('_joyLeft');
+window.addEventListener("keydown", function (event) {
+    // if(rightMovedOut === true){
+      if(event.keyCode == 87) {
+        joyL.style.top = 17 + 'px';
+      } else if(event.keyCode == 83) {
+        joyL.style.top = 37 + 'px';
+      } else if(event.keyCode == 65) {
+        joyL.style.left = 30 + 'px';
+      } else if(event.keyCode == 68) {
+        joyL.style.left = 50 + 'px';
+      } else if (event.keyCode == 17) {
+        pressButton('_leftTopButton');
+      } 
+    // }  
+});
+
+window.addEventListener("keyup", function(event){         
+  // if((rightMovedOut === true)){
+    joyL.style.left = 40 + "px";
+    joyL.style.top = 27 + "px";
+    leaveButton('_leftTopButton')
+  // }
+})
+
+
+
+
+let joyR = document.getElementById('_joyRight');
+window.addEventListener("keydown", function (event) {
+    if(rightMovedOut === true){
+      if(event.keyCode == 38) {
+        joyR.style.top = 280 + 'px';
+      } else if(event.keyCode == 40) {
+        joyR.style.top = 300 + 'px';
+      } else if(event.keyCode == 37) {
+        joyR.style.left = 30 + 'px';
+      } else if(event.keyCode == 38) {
+        joyR.style.left = 50 + 'px';
+      } else if (event.keyCode == 18) {
+        pressButton('_rightBottButton');
+      } 
+    }  
+});
+
+window.addEventListener("keyup", function(event){         
+  if((rightMovedOut === true)){
+    joyR.style.left = 40 + "px";
+    joyR.style.top = 290 + "px";
+    leaveButton('_rightBottButton')
+  }
+})
+
+
 
 
 
