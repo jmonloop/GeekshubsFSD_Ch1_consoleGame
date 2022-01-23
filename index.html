@@ -11,7 +11,7 @@
 <body>
     <!-- <img class="img" src="/img/nintendoSwitch.jpg" alt=""> -->
     <div class="main" id="_main">
-        <div class="onOffswitch" id="_onOffswitch" onclick="switchOnOff() ; bomberman()">
+        <div class="onOffswitch" id="_onOffswitch" onclick="switchOnOff()">
         </div>
         <div class="leftTrigger">
 
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="center" id="_center">
+        <div class="center" id="_center" onclick="bomberman()">
             <div class="gapLeft">
 
             </div>
@@ -75,10 +75,10 @@
             </div>
             <div class="frame">
                 <div class="screenOff" id="_screen">
-                    <video class='video' id="_video" width="100%" height="100%">
+                    <video class='videoOff' id="_video" width="100%" height="100%">
                         <source src="/img/Nintendo Switch[1].mp4" type="video/mp4">
                       </video>
-                    <!-- <canvas id="game"></canvas> -->
+                    <canvas class="gameOff" id="_game"></canvas>
                 </div>
             </div>
         </div>
