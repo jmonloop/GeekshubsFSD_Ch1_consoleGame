@@ -11,8 +11,8 @@ Javascript functionalities were added so animations and the embedded game can be
 
 
 
-
-
+* You can try web version here
+https://jmonloop.github.io/GeekshubsFSD_Ch1_consoleGame/
 
 
 
