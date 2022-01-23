@@ -333,7 +333,7 @@ function bombermanScreen(){
 }
 
 
-let audio = new Audio('/img/bomber.mp3');
+let audio = new Audio('img/bomber.mp3');
 
 function bomberman() {
   document.getElementById('_bombermanScreen').classList.replace('bombermanScreenOn', 'bombermanScreenOff');
