@@ -297,7 +297,7 @@ window.addEventListener("keydown", function (event) {
         joyR.style.left = 30 + 'px';
       } else if(event.keyCode == 38) {
         joyR.style.left = 50 + 'px';
-      } else if (event.keyCode == 18) {
+      } else if (event.keyCode == 190) {
         pressButton('_rightBottButton');
       } 
     }  
@@ -324,7 +324,9 @@ window.addEventListener("keyup", function(event){
 function bomberman() {
   document.getElementById('_video').classList.replace('videoOn', 'videoOff');
   document.getElementById('_game').classList.replace('gameOff', 'gameOn');
-  document.getElementById('_screen').classList.replace('screenOn', 'screenOff');
+
+  let audio = new Audio('/img/bomber.mp3');
+  // audio.play();
 
 
 
@@ -708,9 +710,9 @@ document.addEventListener('keydown', function(e) {
     }).length < playerBlue.numBombs
   ) {
     // place bomb
-    const bomb = new Bomb(row, col, playerBlue.bombSize, playerBlue);
-    entities.push(bomb);
-    cells[row][col] = types.bomb;
+    const bombBlue = new Bomb(playerBlue.row, playerBlue.col, playerBlue.bombSize, playerBlue);
+    entities.push(bombBlue);
+    cells[row][col] = types.bombBlue;
   }
 
   // don't move the player if something is already at that position
@@ -741,18 +743,18 @@ document.addEventListener('keydown', function(e) {
   else if (e.which === 40) {
     row++;
   }
-  // altGr (bomb)
+  // . (bomb)
   else if (
-    e.which === 18 && !cells[row][col] &&
+    e.which === 190 && !cells[row][col] &&
     // count the number of bombs the playerRed has placed
     entities.filter((entity) => {
       return entity.type === types.bomb && entity.owner === playerRed
     }).length < playerRed.numBombs
   ) {
     // place bomb
-    const bomb = new Bomb(row, col, playerRed.bombSize, playerRed);
-    entities.push(bomb);
-    cells[row][col] = types.bomb;
+    const bombRed = new Bomb(playerRed.row, playerRed.col, playerRed.bombSize, playerRed);
+    entities.push(bombRed);
+    cells[row][col] = types.bombRed;
   }
 
   // don't move playerRed if something is already at that position
