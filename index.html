@@ -10,6 +10,7 @@
 </head>
 <body>
     <!-- <img class="img" src="/img/nintendoSwitch.jpg" alt=""> -->
+    <h2 class="description">Welcome to Nintendo Geeks</h2>
     <div class="main" id="_main">
         <div class="onOffswitch" id="_onOffswitch" onclick="switchOnOff()">
         </div>
@@ -19,7 +20,7 @@
         <div class="rightTrigger">
             
         </div>
-        <div class="left" id="_left" onclick="moveLeft(), blueRestart()">
+        <div class="left" id="_left" onclick="moveLeft()">
             <div class="leftTop">
                 <div id="_joyLeft">
                     <div class="joystickLeft" onclick="dragLeft()">
@@ -83,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="right" id="_right" onclick="moveRight(), redRestart()" >
+        <div class="right" id="_right" onclick="moveRight()" >
             <div class="rightTop">
                 <div class="buttonsRight">
                     <div class="bttnCol">
@@ -130,6 +131,16 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="description">
+    
+        <p>· Click switch on for power up
+            <br> · Click on each controller for dissasemble
+            <br>· Use <span class="blue">WASD Ctrl for blue player</span> and <span class="red">↑←↓→ . for red player</span>
+            <br>· Click on the screen for restart the match and... ENJOY!
+        </p>
+        
+
     </div>
 
 <script src="js/main.js"></script>

@@ -325,7 +325,7 @@ function redRestart() {
 function bombermanScreen(){
   document.getElementById('_video').classList.replace('videoOn', 'videoOff');
   document.getElementById('_bombermanScreen').classList.replace('bombermanScreenOff', 'bombermanScreenOn');
-
+  audio.play();
   let anyClick = window.addEventListener.onmousedown;
   if(anyClick) {
     bomberman();
@@ -339,7 +339,7 @@ function bomberman() {
   document.getElementById('_bombermanScreen').classList.replace('bombermanScreenOn', 'bombermanScreenOff');
   document.getElementById('_game').classList.replace('gameOff', 'gameOn');
 
-  audio.play();
+  
 
 
   const canvas = document.getElementById('_game');
