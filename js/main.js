@@ -326,7 +326,7 @@ function bomberman() {
   document.getElementById('_game').classList.replace('gameOff', 'gameOn');
 
   let audio = new Audio('/img/bomber.mp3');
-  // audio.play();
+  audio.play();
 
 
 
@@ -413,7 +413,7 @@ function bomberman() {
       for (let col = 0; col < numCols; col++) {
 
         // 90% chance cells will contain a soft wall
-        if (!template[row][col] && Math.random() < 0.50) {
+        if (!template[row][col] && Math.random() < 0.30) {
           cells[row][col] = types.softWall;
         }
         else if (template[row][col] === types.wall) {
@@ -680,6 +680,9 @@ function bomberman() {
     playerRed.render();
   }
 
+  
+
+
   // listen to keyboard events to move playerBlue
 document.addEventListener('keydown', function(e) {
   let row = playerBlue.row;
@@ -713,6 +716,13 @@ document.addEventListener('keydown', function(e) {
     const bombBlue = new Bomb(playerBlue.row, playerBlue.col, playerBlue.bombSize, playerBlue);
     entities.push(bombBlue);
     cells[row][col] = types.bombBlue;
+    bombBlue.row = row;
+    bombBlue.col = col;
+    // console.log(`BlueBomb= ${bombBlue.col} ${bombBlue.row}`);
+
+    if((bombBlue.col === playerRed.col) && (bombBlue.row === playerRed.row)) {
+      console.log("Red player is dead");
+    }
   }
 
   // don't move the player if something is already at that position
@@ -720,6 +730,10 @@ document.addEventListener('keydown', function(e) {
     playerBlue.row = row;
     playerBlue.col = col;
   }
+  // console.log(`BluePlayer= ${playerBlue.col} ${playerBlue.row}`);
+
+
+
 });
 
 // listen to keyboard events to move playerRed
@@ -755,6 +769,12 @@ document.addEventListener('keydown', function(e) {
     const bombRed = new Bomb(playerRed.row, playerRed.col, playerRed.bombSize, playerRed);
     entities.push(bombRed);
     cells[row][col] = types.bombRed;
+    bombRed.row = row;
+    bombRed.col = col;
+    // console.log(`RedBomb= ${bombRed.col} ${bombRed.row}`);
+    if((bombRed.col === playerBlue.col) && (bombRed.row === playerBlue.row)) {
+      console.log("Blue player is dead");
+    }
   }
 
   // don't move playerRed if something is already at that position
@@ -762,6 +782,7 @@ document.addEventListener('keydown', function(e) {
     playerRed.row = row;
     playerRed.col = col;
   }
+  // console.log(`RedPlayer= ${playerRed.col} ${playerRed.row}`);
 });
 
 
