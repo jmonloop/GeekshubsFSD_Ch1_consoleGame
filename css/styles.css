@@ -1,5 +1,5 @@
 body, html {
-    /* background: black; */
+    background-color: seagreen;
 
     height: 100vh;
     width: 100vw;
@@ -10,6 +10,8 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content:center;
+
+    text-align: center;
 }
 
 
@@ -573,7 +575,7 @@ body, html {
         }
 
     .gapLeft {
-        background-color: white;
+        background-color: seagreen;
         position: absolute;
         top: 0%;
         left: 0%;
@@ -585,7 +587,7 @@ body, html {
     }
 
     .gapRight {
-        background-color: white;
+        background-color: seagreen;
         position: absolute;
         top: 0%;
         right: 0%;
@@ -601,4 +603,18 @@ body, html {
         height: 100%;
         width: 100%;
         z-index: 1000;
+    }
+
+    .description{
+        height: 10em;
+        width: 40em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .blue {
+        font-weight: bold;
+        background-color: #00b7ff;
+    }
+    .red {
+        font-weight: bold;
+        background-color: #c0552b;
     }
