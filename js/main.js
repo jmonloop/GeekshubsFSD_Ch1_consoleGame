@@ -310,6 +310,15 @@ window.addEventListener("keyup", function(event){
 
 
 
+blueRespawn = false;
+    function blueRestart() {
+      blueRespawn = true;
+    }
+redRespawn = false;
+function redRestart() {
+  redRespawn = true;
+}
+
 
 
 
@@ -690,12 +699,15 @@ function bomberman() {
       entity.render();
     });
 
+    
+
     // remove dead entities
     entities = entities.filter((entity) => entity.alive);
-    if(blueAlive === true) {
+
+    if(blueAlive || (!blueAlive && blueRespawn)) {
       playerBlue.render();
     }
-    if(redAlive === true) {
+    if(redAlive || (!redAlive && redRespawn)) {
       playerRed.render();
     }
   }
