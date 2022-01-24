@@ -49,6 +49,6 @@ https://jmonloop.github.io/GeekshubsFSD_Ch1_consoleGame/
 
 ---
 * Thanks to Geekshubs Academy for the training received (https://github.com/GeeksHubsAcademy)
-* Thanks to Straker for his Bomberman Embedded Proyect (https://gist.github.com/straker)
+* Thanks to Straker for his Bomberman embedded proyect (https://gist.github.com/straker)
 
 * Created by Javier Monleón López (https://github.com/jmonloop)
