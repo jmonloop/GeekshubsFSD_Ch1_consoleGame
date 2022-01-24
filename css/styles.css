@@ -62,7 +62,7 @@ body, html {
 
     @keyframes moveRight {
         0% {transform: translateY(0em) translateX(0);}
-        50% {transform: translateY(+10em);}
+        50% {transform: translateY(+8em);}
         100% {transform:  translateX(+10em);}
     }
     @keyframes moveRightMob {
