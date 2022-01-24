@@ -22,7 +22,7 @@ https://jmonloop.github.io/GeekshubsFSD_Ch1_consoleGame/
 
 
 ![ScreenShot](https://raw.githubusercontent.com/jmonloop/GeekshubsFSD_Ch1_consoleGame/master/img/dissasembled.JPG)
-* Embedded and totally functional Bomberman Game adapting the version of 'straker' and adding\ extra features like play with two players and dead when character is bombed.
+* Embedded and totally functional Bomberman Game adapting the version of 'straker' and adding extra features like play with two players and dead when character is bombed.
   (link to the base proyect https://gist.github.com/straker/769fb461e066147ea16ac2cb9463beae)
 
 
@@ -49,6 +49,6 @@ https://jmonloop.github.io/GeekshubsFSD_Ch1_consoleGame/
 
 ---
 * Thanks to Geekshubs Academy for the training received (https://github.com/GeeksHubsAcademy)
-* Thanks to Straker for his Bomberman Embedded Proyect (https://gist.github.com/straker)
+* Thanks to Straker for his Bomberman embedded proyect (https://gist.github.com/straker)
 
 * Created by Javier Monleón López (https://github.com/jmonloop)
