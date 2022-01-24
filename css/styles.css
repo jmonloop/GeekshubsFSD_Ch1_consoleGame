@@ -52,7 +52,7 @@ body, html {
     @keyframes moveLeft {
         0% {transform: translateY(0em) translateX(0);}
         50% {transform: translateY(-5em);}
-        100% {transform:  translateX(-10em);}
+        100% {transform:  translateX(-8em);}
     }
     @keyframes moveLeftMob {
         0% {transform: translateY(0em) translateX(0);}
@@ -63,7 +63,7 @@ body, html {
     @keyframes moveRight {
         0% {transform: translateY(0em) translateX(0);}
         50% {transform: translateY(+5em);}
-        100% {transform:  translateX(+10em);}
+        100% {transform:  translateX(+8em);}
     }
     @keyframes moveRightMob {
         0% {transform: translateY(0em) translateX(0);}
